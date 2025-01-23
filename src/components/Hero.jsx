@@ -11,8 +11,8 @@ const Hero = () => {
 					<div className="flex flex-row">
 						<p className="w-[50%] my-4">
 							<span className="font-medium text-gray-900">
-								Find out where your nearest USKA club is get
-								yourself signed up today!
+								Find out where your nearest Phronesis Tech club
+								is get yourself signed up today!
 							</span>
 						</p>
 						<p className="w-[50%] my-4">

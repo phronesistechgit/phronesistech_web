@@ -6,12 +6,13 @@ const Industries = () => {
 			<h2 className="text-3xl font-bold text-center text-blue-600">
 				Industries We Serve
 			</h2>
-			<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+			<div className="max-w-7xl p-2 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
 				<div className="bg-white p-4 rounded-lg shadow-md">
 					<h3 className="text-xl font-semibold text-blue-600">IT</h3>
 					<p className="mt-2 text-gray-700">
-						Providing cutting-edge solutions for the technology
-						sector.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
 					</p>
 				</div>
 				<div className="bg-white p-4 rounded-lg shadow-md">
@@ -19,8 +20,9 @@ const Industries = () => {
 						Healthcare
 					</h3>
 					<p className="mt-2 text-gray-700">
-						Enhancing patient care with innovative digital
-						solutions.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
 					</p>
 				</div>
 				<div className="bg-white p-4 rounded-lg shadow-md">
@@ -28,7 +30,9 @@ const Industries = () => {
 						Retail
 					</h3>
 					<p className="mt-2 text-gray-700">
-						Driving customer engagement through retail technology.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
 					</p>
 				</div>
 				<div className="bg-white p-4 rounded-lg shadow-md">
@@ -36,8 +40,29 @@ const Industries = () => {
 						Banking & Finance
 					</h3>
 					<p className="mt-2 text-gray-700">
-						Streamlining operations with secure and scalable
-						solutions.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
+					</p>
+				</div>
+				<div className="bg-white p-4 rounded-lg shadow-md">
+					<h3 className="text-xl font-semibold text-blue-600">
+						Oil & Refinery
+					</h3>
+					<p className="mt-2 text-gray-700">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
+					</p>
+				</div>
+				<div className="bg-white p-4 rounded-lg shadow-md">
+					<h3 className="text-xl font-semibold text-blue-600">
+						E-Commerce
+					</h3>
+					<p className="mt-2 text-gray-700">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Fusce scelerisque fermentum nibh, id tristique justo
+						hendrerit vel. Nam ut erat ligula.
 					</p>
 				</div>
 			</div>

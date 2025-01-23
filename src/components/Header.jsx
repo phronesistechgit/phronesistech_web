@@ -1,11 +1,19 @@
 // src/components/Header.js
 import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/phronesis_logo.png"; // Import the logo file
 
 const Header = () => {
 	return (
 		<header className="fixed top-0 left-0 w-full bg-blue-600 text-white shadow-md z-10">
 			<div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-				<div className="font-bold text-lg">Logo</div>
+				<Link to="/">
+					<img
+						src={logo}
+						alt="Company Logo"
+						className="h-16 w-auto"
+					/>
+				</Link>
 				<nav className="hidden md:flex space-x-6">
 					<div className="group relative">
 						<button className="hover:text-gray-200">Home</button>
@@ -18,22 +26,42 @@ const Header = () => {
 							<a
 								href="#"
 								className="block px-4 py-2 hover:bg-gray-100">
-								Web Development
+								Data Engineering
 							</a>
 							<a
 								href="#"
 								className="block px-4 py-2 hover:bg-gray-100">
-								Graphics Design
+								Data Analytics
 							</a>
 							<a
 								href="#"
 								className="block px-4 py-2 hover:bg-gray-100">
-								Digital Marketing
+								Integrations
 							</a>
 							<a
 								href="#"
 								className="block px-4 py-2 hover:bg-gray-100">
-								UI/UX Design
+								Salesforce Consulting/Development
+							</a>
+							<a
+								href="#"
+								className="block px-4 py-2 hover:bg-gray-100">
+								Azure & .NET
+							</a>
+							<a
+								href="#"
+								className="block px-4 py-2 hover:bg-gray-100">
+								AI
+							</a>
+							<a
+								href="#"
+								className="block px-4 py-2 hover:bg-gray-100">
+								SharePoint, Project Management & IT Consulting
+							</a>
+							<a
+								href="#"
+								className="block px-4 py-2 hover:bg-gray-100">
+								Custom App/Mobile App Development
 							</a>
 						</div>
 					</div>

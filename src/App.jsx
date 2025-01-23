@@ -11,7 +11,6 @@ import ContactUs from "./pages/ContactUs";
 function App() {
 	return (
 		<div className="min-h-screen flex flex-col">
-			<div className="text-red-500 text-center">Hello, Tailwind!</div>
 			<Header />
 			<main className="flex-grow">
 				{/* Add routing here if using react-router-dom */}
