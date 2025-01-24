@@ -118,7 +118,9 @@ const Header = () => {
 						</button>
 					</div>
 				</nav>
-				<button className="md:hidden p-2">☰</button>
+				<button className="text-4xl md:hidden p-1 text-blue-500">
+					☰
+				</button>
 			</div>
 		</header>
 	);
