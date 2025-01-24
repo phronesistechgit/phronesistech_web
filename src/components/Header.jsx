@@ -6,7 +6,7 @@ import logo from "../assets/phronesis_logo.png"; // Import the logo file
 
 const Header = () => {
 	return (
-		<header className="fixed top-0 left-0 w-full bg-white text-white shadow-md shadow-blue-500/50 z-10">
+		<header className="fixed top-0 left-0 w-full bg-white text-white shadow-xl shadow-blue-500/50 z-10">
 			<div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
 				<Link to="/">
 					<img
