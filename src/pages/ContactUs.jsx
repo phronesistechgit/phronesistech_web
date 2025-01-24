@@ -32,7 +32,7 @@
 // 				</div>
 // 				<button
 // 					type="submit"
-// 					className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+// 					className="w-full bg-[#007CC2] text-white py-2 rounded hover:bg-blue-700">
 // 					Send Message
 // 				</button>
 // 			</form>
@@ -117,7 +117,9 @@ const ContactUs = () => {
 
 	return (
 		<div className="max-w-lg mx-auto p-6">
-			<h2 className="text-2xl font-bold text-center mb-4">Contact Us</h2>
+			<h2 className="text-3xl font-bold text-center text-blue-600">
+				Contact Us
+			</h2>
 			{/* <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 				<div>
 					<label className="block">Name</label>
@@ -150,24 +152,30 @@ const ContactUs = () => {
 
 				<button
 					type="submit"
-					className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+					className="w-full p-2 bg-blue-500 text-white rounded hover:bg-[#007CC2]">
 					Submit
 				</button>
 			</form> */}
 			<form ref={form} onSubmit={sendEmail}>
-				<label>Name</label>
+				<label className="text-md font-semibold text-blue-600">
+					Name
+				</label>
 				<input
 					type="text"
 					name="user_name"
 					className="w-full p-2 border border-gray-300 rounded"
 				/>
-				<label>Email</label>
+				<label className="text-md font-semibold text-blue-600">
+					Email
+				</label>
 				<input
 					type="email"
 					name="user_email"
 					className="w-full p-2 border border-gray-300 rounded"
 				/>
-				<label>Message</label>
+				<label className="text-md font-semibold text-blue-600">
+					Message
+				</label>
 				<textarea
 					name="message"
 					className="w-full p-2 border border-gray-300 rounded"
@@ -175,7 +183,7 @@ const ContactUs = () => {
 				<input
 					type="submit"
 					value="Send"
-					className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+					className="w-full p-2 bg-[#007CC2] text-white rounded hover:bg-green-500"
 				/>
 			</form>
 		</div>

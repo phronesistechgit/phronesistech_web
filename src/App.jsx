@@ -7,6 +7,7 @@ import Expertise from "./pages/Expertise";
 import Industries from "./pages/Industries";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import HowWeHelp from "./pages/HowWeHelp";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<HomePage />
 				<Expertise />
 				<Industries />
+				<HowWeHelp />
 				<AboutUs />
 				<ContactUs />
 			</main>
