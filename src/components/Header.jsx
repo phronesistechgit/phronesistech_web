@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/phronesis_logo.png"; // Import the logo file
+import hero from "../assets/hero.jpg"; // Import the logo file
 
 const Header = () => {
 	return (
