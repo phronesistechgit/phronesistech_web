@@ -10,7 +10,8 @@ const Industries = () => {
 				<div
 					className="relative bg-white p-4 rounded-lg shadow-md h-40 flex items-center justify-center bg-cover bg-center"
 					style={{
-						backgroundImage: "url('healthcare-bg.png')",
+						backgroundImage:
+							"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/healthcare-bg.png')",
 					}}>
 					<div className="absolute inset-0 bg-white/60 rounded-lg"></div>
 					<h3 className="relative text-center text-xl font-bold text-gray-600">
@@ -20,7 +21,8 @@ const Industries = () => {
 				<div
 					className="relative bg-white p-4 rounded-lg shadow-md h-40 flex items-center justify-center bg-cover bg-center"
 					style={{
-						backgroundImage: "url('retail-bg.png')",
+						backgroundImage:
+							"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/retail-bg.png')",
 					}}>
 					<div className="absolute inset-0 bg-white/60 rounded-lg"></div>
 					<h3 className="relative text-center text-xl font-bold text-gray-600">
@@ -30,7 +32,8 @@ const Industries = () => {
 				<div
 					className="relative bg-white p-4 rounded-lg shadow-md h-40 flex items-center justify-center bg-cover bg-center"
 					style={{
-						backgroundImage: "url('supply-bg.jpg')",
+						backgroundImage:
+							"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/supply-bg.jpg')",
 					}}>
 					<div className="absolute inset-0 bg-white/60 rounded-lg"></div>
 					<h3 className="relative text-center text-xl font-bold text-gray-600">
@@ -40,7 +43,8 @@ const Industries = () => {
 				<div
 					className="relative bg-white p-4 rounded-lg shadow-md h-40 flex items-center justify-center bg-cover bg-center"
 					style={{
-						backgroundImage: "url('finance-bg.png')",
+						backgroundImage:
+							"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/finance-bg.png')",
 					}}>
 					<div className="absolute inset-0 bg-white/60 rounded-lg"></div>
 					<h3 className="relative text-center text-xl font-bold text-gray-600">
@@ -50,7 +54,8 @@ const Industries = () => {
 				<div
 					className="relative bg-white p-4 rounded-lg shadow-md h-40 flex items-center justify-center bg-cover bg-center"
 					style={{
-						backgroundImage: "url('tech-bg.jpg')",
+						backgroundImage:
+							"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/tech-bg.jpg')",
 					}}>
 					<div className="absolute inset-0 bg-white/60 rounded-lg"></div>
 					<h3 className="relative text-center text-xl font-bold text-gray-600">
