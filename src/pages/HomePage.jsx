@@ -6,7 +6,8 @@ const HomePage = () => {
 			id="home"
 			className="pb-8 pl-16 pr-16 pt-16 bg-cover bg-center text-center"
 			style={{
-				backgroundImage: "url('blue-gradient.jpg')",
+				backgroundImage:
+					"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/blue-gradient.jpg')",
 			}}>
 			<h1 className="mt-5 text-4xl font-bold text-gray-600">
 				PhronesisTech
