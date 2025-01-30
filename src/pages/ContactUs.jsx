@@ -116,8 +116,8 @@ const ContactUs = () => {
 	};
 
 	return (
-		<div className="max-w-lg mx-auto p-6">
-			<h2 className="text-3xl font-bold text-center text-blue-600">
+		<section id="contactus" className="max-w-lg mx-auto p-6">
+			<h2 className="text-3xl font-bold text-center text-gray-600">
 				Contact Us
 			</h2>
 			{/* <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -158,6 +158,20 @@ const ContactUs = () => {
 			</form> */}
 			<form ref={form} onSubmit={sendEmail}>
 				<label className="text-md font-semibold text-blue-600">
+					Type of Enquiry
+				</label>
+				<select
+					name="enquiry_type"
+					className="w-full p-2 border border-gray-300 rounded bg-white text-gray-700">
+					<option value="" disabled selected>
+						-- Select an Option --
+					</option>
+					<option value="general">Products Inquiry</option>
+					<option value="support">Serivces Offered</option>
+					<option value="sales">Custom Inquiry</option>
+					{/* <option value="partnership">Inquiry 4</option> */}
+				</select>
+				<label className="text-md font-semibold text-blue-600">
 					Name
 				</label>
 				<input
@@ -174,6 +188,30 @@ const ContactUs = () => {
 					className="w-full p-2 border border-gray-300 rounded"
 				/>
 				<label className="text-md font-semibold text-blue-600">
+					Contact Number
+				</label>
+				<input
+					type="contact_number"
+					name="user_contact_number"
+					className="w-full p-2 border border-gray-300 rounded"
+				/>
+				<label className="text-md font-semibold text-blue-600">
+					City
+				</label>
+				<input
+					type="city"
+					name="user_city"
+					className="w-full p-2 border border-gray-300 rounded"
+				/>
+				<label className="text-md font-semibold text-blue-600">
+					State
+				</label>
+				<input
+					type="state"
+					name="user_state"
+					className="w-full p-2 border border-gray-300 rounded"
+				/>
+				<label className="text-md font-semibold text-blue-600">
 					Message
 				</label>
 				<textarea
@@ -186,7 +224,7 @@ const ContactUs = () => {
 					className="w-full p-2 bg-[#007CC2] text-white rounded hover:bg-green-500"
 				/>
 			</form>
-		</div>
+		</section>
 	);
 };
 

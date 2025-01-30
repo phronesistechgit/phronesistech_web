@@ -3,25 +3,26 @@ import React from "react";
 const HomePage = () => {
 	return (
 		<section
-			className="p-16 bg-cover bg-center text-center"
+			id="home"
+			className="pb-8 pl-16 pr-16 pt-16 bg-cover bg-center text-center"
 			style={{
-				backgroundImage:
-					"url('https://github.com/phronesistechgit/phronesistech_web/raw/refs/heads/main/hero.jpg')",
+				backgroundImage: "url('blue-gradient.jpg')",
 			}}>
-			<h1
-				className="mt-5 text-5xl font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,1)]
- text-blue-600">
-				Phronesis Tech
+			<h1 className="mt-5 text-4xl font-bold text-gray-600">
+				PhronesisTech
 			</h1>
-			<h1 className="text-2xl mt-2 font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] text-blue-600">
-				PIONEERING EXCELLENCE, ACHIEVING RESULTS
+			<h1 className="text-lg mt-2 text-gray-600">
+				CREDIBILITY | COMPETENCE | COMMITMENT | CUSTOMER CENTRICITY |
+				CONTINUOUS IMPROVEMENT
 			</h1>
-			<p className="text-white mt-4 text-lg">
-				PhronesisTech, founded in 2022, is a leading custom software
-				development company in Bengaluru, India. We deliver innovative
-				digital solutions tailored to businesses worldwide, from
-				startups to large enterprises.
-			</p>
+			{/* <p className="text-white font-bold mt-4 text-lg">
+				"The best way to predict the future is to create it."
+			</p> */}
+
+			{/* Author Name - Right Aligned */}
+			{/* <p className="text-white font-semibold text-md mt-2 text-right pr-[5%] md:pr-[15%] lg:pr-[30%]">
+				-Peter Drucker
+			</p> */}
 		</section>
 	);
 };

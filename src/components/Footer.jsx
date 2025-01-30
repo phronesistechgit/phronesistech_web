@@ -83,8 +83,8 @@ const Footer = () => {
 				<div>
 					<h3 className="font-bold text-lg mb-4">Contact Info</h3>
 					<p>1234 Bengaluru, India</p>
-					<p>Email: contact@company.com</p>
-					<p>Phone: (91) 123-456789</p>
+					<p>Email: sales@phronesistech.io</p>
+					<p>crm@phronesistech.io</p>
 				</div>
 			</div>
 			<div className="text-center py-4 border-t border-blue-500">
