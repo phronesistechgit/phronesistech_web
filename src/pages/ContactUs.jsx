@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 
 const schema = yup
   .object({
+    enquiry_type: yup.string().required("Please select an inquiry type"),
     name: yup.string().required("Name is required"),
     email: yup
       .string()
@@ -57,6 +58,25 @@ const ContactUs = () => {
       </h2>
       <form ref={form} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="text-gray-700 font-medium">Type of Inquiry</label>
+            <select
+              {...register("enquiry_type")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.enquiry_type ? "border-red-500" : "border-gray-300"
+              }`}
+            >
+              <option value="">Select an Option</option>
+              <option value="general">Products Inquiry</option>
+              <option value="support">Services Offered</option>
+              <option value="sales">Custom Inquiry</option>
+            </select>
+            {errors.enquiry_type && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.enquiry_type.message}
+              </p>
+            )}
+          </div>
           <div>
             <label className="text-gray-700 font-medium">Name</label>
             <input

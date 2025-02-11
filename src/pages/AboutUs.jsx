@@ -33,7 +33,7 @@ const AboutUs = () => {
       </div>
       <div className="max-w-6xl p-6 mx-auto flex flex-col md:flex-row justify-between items-center gap-10 mt-12">
         <div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-blue-700 transform hover:scale-105 transition duration-500">
-          <h4 className="text-4xl font-bold text-center text-gray-700 mb-8">
+          <h4 className="text-4xl font-bold text-center text-[#2563EB] mb-8">
             Our Mission
           </h4>
           <p className="text-gray-800 leading-relaxed text-center">
@@ -43,7 +43,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-blue-700 transform hover:scale-105 transition duration-500">
-          <h4 className="text-4xl font-bold text-center text-gray-700 mb-8">
+          <h4 className="text-4xl font-bold text-center text-[#2563EB] mb-8">
             Our Vision
           </h4>
 
