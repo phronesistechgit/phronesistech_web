@@ -51,7 +51,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="max-w-3xl mx-auto bg-white p-6 md:p-8">
+    <section className="max-w-3xl mx-auto bg-white p-6 md:p-8" id="contactus">
       {/* shadow-2xl rounded-2xl border border-gray-200 */}
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
         Contact Us
