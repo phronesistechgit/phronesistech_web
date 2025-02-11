@@ -13,7 +13,7 @@ const schema = yup
       .required("Email is required"),
     user_contact_number: yup
       .string()
-      .matches(/^[0-9]$/, "Contact number is required")
+      .matches(/^\d+$/, "Contact number is required")
       .required("Contact number is required"),
     user_city: yup.string().required("City is required"),
     user_state: yup.string().required("State is required"),
