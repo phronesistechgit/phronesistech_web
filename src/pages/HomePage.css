@@ -1,0 +1,19 @@
+/* Add this CSS for animated gradient */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.animate-gradientMove {
+    animation: gradientMove 10s ease infinite;
+    background-size: 400% 400%;
+}

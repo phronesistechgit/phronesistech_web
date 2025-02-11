@@ -1,231 +1,176 @@
-// import React from "react";
-
-// const ContactUs = () => {
-// 	return (
-// 		<section className="py-16 bg-white">
-// 			<h2 className="text-3xl font-bold text-center text-blue-600">
-// 				Contact Us
-// 			</h2>
-// 			<form className="max-w-3xl mx-auto mt-8 space-y-6">
-// 				<div>
-// 					<label className="block text-gray-700">Name</label>
-// 					<input
-// 						type="text"
-// 						className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-// 						placeholder="Your Name"
-// 					/>
-// 				</div>
-// 				<div>
-// 					<label className="block text-gray-700">Email</label>
-// 					<input
-// 						type="email"
-// 						className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-// 						placeholder="Your Email"
-// 					/>
-// 				</div>
-// 				<div>
-// 					<label className="block text-gray-700">Message</label>
-// 					<textarea
-// 						className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-// 						rows="4"
-// 						placeholder="Your Message"></textarea>
-// 				</div>
-// 				<button
-// 					type="submit"
-// 					className="w-full bg-[#007CC2] text-white py-2 rounded hover:bg-blue-700">
-// 					Send Message
-// 				</button>
-// 			</form>
-// 		</section>
-// 	);
-// };
-
-// export default ContactUs;
-
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
 
-// Schema for form validation using Yup
 const schema = yup
-	.object({
-		name: yup.string().required("Name is required"),
-		email: yup
-			.string()
-			.email("Invalid email")
-			.required("Email is required"),
-		message: yup.string().required("Message is required"),
-	})
-	.required();
+  .object({
+    name: yup.string().required("Name is required"),
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    user_contact_number: yup
+      .string()
+      .matches(/^[0-9]{10}$/, "Contact number must be 10 digits")
+      .required("Contact number is required"),
+    user_city: yup.string().required("City is required"),
+    user_state: yup.string().required("State is required"),
+    message: yup.string().required("Message is required"),
+  })
+  .required();
 
 const ContactUs = () => {
-	const form = useRef();
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm({
-		resolver: yupResolver(schema),
-	});
+  const form = useRef();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-	const onSubmit = (data) => {
-		emailjs
-			.sendForm("emailjs_gmail_phronesis", "template_p0fngao", data, {
-				publicKey: "Do73VYB2pWfRB_MRj",
-			})
-			// emailjs.send("emailjs_gmail_phronesis","template_p0fngao",{
-			// user_name: "test name",
-			// user_email: "user@testemail.com",
-			// message: "test msg",
-			// reply_to: "test@replyto.com",
-			// });
-			.then(
-				(response) => {
-					alert("Message Sent Successfully!");
-					console.log(response);
-				},
-				(error) => {
-					alert("Failed to send message");
-					console.error(error);
-				}
-			);
-	};
+  const onSubmit = (data) => {
+    emailjs
+      .sendForm("emailjs_gmail_phronesis", "template_p0fngao", data, {
+        publicKey: "Do73VYB2pWfRB_MRj",
+      })
+      .then(
+        () => {
+          alert("Message Sent Successfully!");
+          reset();
+        },
+        (error) => {
+          alert("Failed to send message");
+          console.error(error);
+        }
+      );
+  };
 
-	const sendEmail = (e) => {
-		e.preventDefault();
+  return (
+    <section className="max-w-3xl mx-auto bg-white p-6 md:p-8">
+      {/* shadow-2xl rounded-2xl border border-gray-200 */}
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
+        Contact Us
+      </h2>
+      <form ref={form} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="text-gray-700 font-medium">Name</label>
+            <input
+              type="text"
+              {...register("name")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.name ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Enter your name"
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
 
-		emailjs
-			.sendForm(
-				"emailjs_gmail_phronesis",
-				"template_p0fngao",
-				form.current,
-				{
-					publicKey: "vjkGTRH1MHrrP5Doc",
-				}
-			)
-			.then(
-				() => {
-					console.log("SUCCESS!");
-				},
-				(error) => {
-					console.log("FAILED...", error.text);
-				}
-			);
-	};
+          <div>
+            <label className="text-gray-700 font-medium">Email</label>
+            <input
+              type="email"
+              {...register("email")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Enter your email"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
 
-	return (
-		<section id="contactus" className="max-w-lg mx-auto p-6">
-			<h2 className="text-3xl font-bold text-center text-gray-600">
-				Contact Us
-			</h2>
-			{/* <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-				<div>
-					<label className="block">Name</label>
-					<input
-						type="text"
-						{...register("name")}
-						className="w-full p-2 border border-gray-300 rounded"
-					/>
-					<p className="text-red-500">{errors.name?.message}</p>
-				</div>
+          <div>
+            <label className="text-gray-700 font-medium">Contact Number</label>
+            <input
+              type="text"
+              {...register("user_contact_number")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.user_contact_number
+                  ? "border-red-500"
+                  : "border-gray-300"
+              }`}
+              placeholder="Enter your contact number"
+            />
+            {errors.user_contact_number && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.user_contact_number.message}
+              </p>
+            )}
+          </div>
 
-				<div>
-					<label className="block">Email</label>
-					<input
-						type="email"
-						{...register("email")}
-						className="w-full p-2 border border-gray-300 rounded"
-					/>
-					<p className="text-red-500">{errors.email?.message}</p>
-				</div>
+          <div>
+            <label className="text-gray-700 font-medium">City</label>
+            <input
+              type="text"
+              {...register("user_city")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.user_city ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Enter your city"
+            />
+            {errors.user_city && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.user_city.message}
+              </p>
+            )}
+          </div>
 
-				<div>
-					<label className="block">Message</label>
-					<textarea
-						{...register("message")}
-						className="w-full p-2 border border-gray-300 rounded"
-						rows="4"></textarea>
-					<p className="text-red-500">{errors.message?.message}</p>
-				</div>
+          <div>
+            <label className="text-gray-700 font-medium">State</label>
+            <input
+              type="text"
+              {...register("user_state")}
+              className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.user_state ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Enter your state"
+            />
+            {errors.user_state && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.user_state.message}
+              </p>
+            )}
+          </div>
+        </div>
 
-				<button
-					type="submit"
-					className="w-full p-2 bg-blue-500 text-white rounded hover:bg-[#007CC2]">
-					Submit
-				</button>
-			</form> */}
-			<form ref={form} onSubmit={sendEmail}>
-				<label className="text-md font-semibold text-blue-600">
-					Type of Enquiry
-				</label>
-				<select
-					name="enquiry_type"
-					className="w-full p-2 border border-gray-300 rounded bg-white text-gray-700">
-					<option value="" disabled selected>
-						-- Select an Option --
-					</option>
-					<option value="general">Products Inquiry</option>
-					<option value="support">Serivces Offered</option>
-					<option value="sales">Custom Inquiry</option>
-					{/* <option value="partnership">Inquiry 4</option> */}
-				</select>
-				<label className="text-md font-semibold text-blue-600">
-					Name
-				</label>
-				<input
-					type="text"
-					name="user_name"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<label className="text-md font-semibold text-blue-600">
-					Email
-				</label>
-				<input
-					type="email"
-					name="user_email"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<label className="text-md font-semibold text-blue-600">
-					Contact Number
-				</label>
-				<input
-					type="contact_number"
-					name="user_contact_number"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<label className="text-md font-semibold text-blue-600">
-					City
-				</label>
-				<input
-					type="city"
-					name="user_city"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<label className="text-md font-semibold text-blue-600">
-					State
-				</label>
-				<input
-					type="state"
-					name="user_state"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<label className="text-md font-semibold text-blue-600">
-					Message
-				</label>
-				<textarea
-					name="message"
-					className="w-full p-2 border border-gray-300 rounded"
-				/>
-				<input
-					type="submit"
-					value="Send"
-					className="w-full p-2 bg-[#007CC2] text-white rounded hover:bg-green-500"
-				/>
-			</form>
-		</section>
-	);
+        <div>
+          <label className="text-gray-700 font-medium">Message</label>
+          <textarea
+            {...register("message")}
+            className={`w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+              errors.message ? "border-red-500" : "border-gray-300"
+            }`}
+            rows="4"
+            placeholder="Type your message..."
+          ></textarea>
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </section>
+  );
 };
 
 export default ContactUs;

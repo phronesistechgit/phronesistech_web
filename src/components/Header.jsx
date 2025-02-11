@@ -1,221 +1,141 @@
-// src/components/Header.js
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/phronesis_logo.png"; // Import the logo file
-// import hero from "../assets/hero.jpg"; // Import the logo file
+import logo from "../assets/phronesis_logo.png";
 
 const Header = () => {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-	// Toggle Mobile Menu
-	const toggleMobileMenu = () => {
-		setIsMobileMenuOpen(!isMobileMenuOpen);
-	};
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
-	const scrollToSection = (sectionId) => {
-		const section = document.getElementById(sectionId);
-		if (section) {
-			section.scrollIntoView({ behavior: "smooth", block: "start" });
-		}
-	};
-
-	return (
-		<header className="fixed top-0 left-0 w-full bg-white text-white  z-10">
-			<div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-				<Link to="/">
-					<div className="flex items-center space-x-3">
-						<img
-							src={logo}
-							alt="Company Logo"
-							className="h-12 w-auto"
-						/>
-
-						<span className="text-3xl font-bold text-blue-600 hidden sm:block">
-							PhronesisTech
-						</span>
-					</div>
-				</Link>
-				<nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-6">
-					<div className="group relative">
-						<button
-							onClick={() => scrollToSection("home")}
-							className="text-gray-600 underline font-bold hover:text-blue-600">
-							Home
-						</button>
-					</div>
-					<div className="group relative">
-						<button
-							onClick={() => scrollToSection("expertise")}
-							className="text-gray-600 underline font-bold hover:text-blue-600">
-							Offerings
-						</button>
-						<div className="absolute left-0 hidden group-hover:block bg-white text-black p-2 rounded shadow-md">
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Data Engineering
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Digital & Experience Engineering
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Cloud & DevOps Engineering
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								AI/ML Engineering
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Digital Product Engineering
-							</a>
-						</div>
-					</div>
-					<div className="group relative">
-						<button
-							onClick={() => scrollToSection("industries")}
-							className="text-gray-600 underline font-bold hover:text-blue-600">
-							Industries
-						</button>
-						<div className="absolute left-0 hidden group-hover:block bg-white text-black p-2 rounded shadow-md">
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Healthcare & Life Sciences
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Retail & E-commerce
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Supply Chain & Logistics
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Banking & Finance
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Financial Services
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Tech-Focused Sector
-							</a>
-						</div>
-					</div>
-					<div className="group relative">
-						<button
-							onClick={() => scrollToSection("aboutus")}
-							className="text-gray-600 underline font-bold hover:text-blue-600">
-							About Us
-						</button>
-						{/* <div className="absolute left-0 hidden group-hover:block bg-white text-black p-2 rounded shadow-md">
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Company
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Press Media
-							</a>
-							<a
-								href="#"
-								className="text-blue-600 block px-4 py-2 hover:bg-gray-100">
-								Our Blog
-							</a>
-						</div> */}
-					</div>
-					{/* <div>
-						<button className="text-gray-600 font-bold hover:text-blue-600">
-							Contact Us
-						</button>
-					</div> */}
-				</nav>
-				<div className="flex items-center space-x-4">
-					{/* Contact Us Button */}
-					<Link to="/contact">
-						<button
-							onClick={() => scrollToSection("contactus")}
-							className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition">
-							Contact Us
-						</button>
-					</Link>
-
-					{/* Mobile Menu Button */}
-					<button
-						onClick={toggleMobileMenu}
-						className="md:hidden p-2 text-blue-600 focus:outline-none">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							className="w-8 h-8">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M4 6h16M4 12h16M4 18h16"
-							/>
-						</svg>
-					</button>
-				</div>
-			</div>
-			{/* Mobile Menu (Dropdown) */}
-			{isMobileMenuOpen && (
-				<div className="md:hidden bg-white shadow-lg absolute top-16 left-0 w-full py-4">
-					<nav className="flex flex-col items-center space-y-4">
-						<Link
-							to="/"
-							className="text-gray-600 font-bold hover:text-black"
-							onClick={() => setIsMobileMenuOpen(false)}>
-							Home
-						</Link>
-						<Link
-							to="/expertise"
-							className="text-gray-600 font-bold hover:text-black"
-							onClick={() => setIsMobileMenuOpen(false)}>
-							Expertise
-						</Link>
-						<Link
-							to="/expertise"
-							className="text-gray-600 font-bold hover:text-black"
-							onClick={() => setIsMobileMenuOpen(false)}>
-							Industries
-						</Link>
-						<Link
-							to="/expertise"
-							className="text-gray-600 font-bold hover:text-black"
-							onClick={() => setIsMobileMenuOpen(false)}>
-							About Us
-						</Link>
-						<Link
-							to="/contact"
-							className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition"
-							onClick={() => setIsMobileMenuOpen(false)}>
-							Contact Us
-						</Link>
-					</nav>
-				</div>
-			)}
-		</header>
-	);
+  return (
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 py-4">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+        <Link to="/">
+          <div className="flex items-center space-x-4">
+            <img src={logo} alt="Company Logo" className="h-12 w-auto" />
+            <span className="text-3xl font-bold text-blue-600">
+              PhronesisTech
+            </span>
+          </div>
+        </Link>
+        <nav className="hidden lg:flex space-x-8">
+          {[
+            { id: "home", label: "Home" },
+            {
+              id: "expertise",
+              label: "Offerings",
+              dropdown: [
+                "Data Engineering",
+                "Digital & Experience Engineering",
+                "Cloud & DevOps Engineering",
+                "AI/ML Engineering",
+                "Digital Product Engineering",
+              ],
+            },
+            {
+              id: "industries",
+              label: "Industries",
+              dropdown: [
+                "Healthcare & Life Sciences",
+                "Retail & E-commerce",
+                "Supply Chain & Logistics",
+                "Banking & Finance",
+                "Financial Services",
+                "Tech-Focused Sector",
+              ],
+            },
+            { id: "aboutus", label: "About Us" },
+          ].map(({ id, label, dropdown }) => (
+            <div key={id} className="relative group">
+              <button
+                className="text-gray-700 font-semibold text-lg hover:text-blue-600 transition px-4 py-2"
+                onClick={() => scrollToSection(id)}
+              >
+                {label}
+              </button>
+              {dropdown && (
+                <div className="absolute left-0 hidden group-hover:block bg-white text-black p-4 rounded shadow-md w-56">
+                  {dropdown.map((item, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded"
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={() => scrollToSection("contactus")}
+            className="hidden lg:block bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg px-6 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 font-bold"
+          >
+            Contact Us
+          </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-3 text-blue-600 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-10 h-10"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white shadow-lg absolute top-20 left-0 w-full py-6">
+          <nav className="flex flex-col items-center space-y-6">
+            {["home", "expertise", "industries", "aboutus", "contactus"].map(
+              (id, index) => (
+                <button
+                  key={id}
+                  className="text-gray-700 text-lg font-bold hover:text-blue-600 transition"
+                  onClick={() => {
+                    scrollToSection(id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  {
+                    [
+                      "Home",
+                      "Offerings",
+                      "Industries",
+                      "About Us",
+                      "Contact Us",
+                    ][index]
+                  }
+                </button>
+              )
+            )}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Header;

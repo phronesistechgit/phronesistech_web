@@ -1,31 +1,66 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Player } from "@lottiefiles/react-lottie-player"; // Import Lottie Player
+import jsonfile from "./hero-animation.json"; // Lottie Animation JSON file
+import "./HomePage.css";
+
+// Tech Points
+const points = [
+  "CREDIBILITY",
+  "COMPETENCE",
+  "COMMITMENT",
+  "CUSTOMER CENTRICITY",
+  "CONTINUOUS IMPROVEMENT",
+];
 
 const HomePage = () => {
-	return (
-		<section
-			id="home"
-			className="pb-8 pl-16 pr-16 pt-16 bg-cover bg-center text-center"
-			style={{
-				backgroundImage:
-					"url('https://raw.githubusercontent.com/phronesistechgit/phronesistech_web/refs/heads/main/blue-gradient.jpg')",
-			}}>
-			<h1 className="mt-5 text-4xl font-bold text-gray-600">
-				PhronesisTech
-			</h1>
-			<h1 className="text-lg mt-2 text-gray-600">
-				CREDIBILITY | COMPETENCE | COMMITMENT | CUSTOMER CENTRICITY |
-				CONTINUOUS IMPROVEMENT
-			</h1>
-			{/* <p className="text-white font-bold mt-4 text-lg">
-				"The best way to predict the future is to create it."
-			</p> */}
+  return (
+    <section
+      id="home"
+      className="pb-16 px-8 pt-[10rem] text-center flex flex-col md:flex-row items-center justify-center min-h-screen relative overflow-hidden"
+    >
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-300 to-blue-700 animate-gradientMove z-0"></div>
 
-			{/* Author Name - Right Aligned */}
-			{/* <p className="text-white font-semibold text-md mt-2 text-right pr-[5%] md:pr-[15%] lg:pr-[30%]">
-				-Peter Drucker
-			</p> */}
-		</section>
-	);
+      {/* Content Section */}
+      <div className="flex flex-col items-center md:w-1/2 md:text-left text-center z-10">
+        {/* Heading with Framer Motion Animation */}
+        <motion.h1
+          className="mt-5 text-5xl font-bold text-white relative z-10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          PhronesisTech
+        </motion.h1>
+
+        {/* Animated Points */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto z-10">
+          {points.map((point, index) => (
+            <motion.div
+              key={index}
+              className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform duration-300 text-white flex items-center justify-center text-center min-w-[200px] cursor-default font-bold"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              {point}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lottie Animation Section */}
+      <div className="md:w-1/2 flex justify-center z-10">
+        <Player
+          autoplay
+          loop
+          src={jsonfile} // Tech Lottie animation
+          style={{ width: "100%", height: "500px" }}
+        />
+      </div>
+    </section>
+  );
 };
 
 export default HomePage;
