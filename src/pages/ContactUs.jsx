@@ -13,7 +13,7 @@ const schema = yup
       .required("Email is required"),
     user_contact_number: yup
       .string()
-      .matches(/^[0-9]{10}$/, "Contact number must be 10 digits")
+      .matches(/^[0-9]$/, "Contact number is required")
       .required("Contact number is required"),
     user_city: yup.string().required("City is required"),
     user_state: yup.string().required("State is required"),
@@ -34,8 +34,8 @@ const ContactUs = () => {
 
   const onSubmit = (data) => {
     emailjs
-      .sendForm("emailjs_gmail_phronesis", "template_p0fngao", data, {
-        publicKey: "Do73VYB2pWfRB_MRj",
+      .sendForm("emailjs_gmail_phronesis", "template_p0fngao", form.current, {
+        publicKey: "vjkGTRH1MHrrP5Doc",
       })
       .then(
         () => {
