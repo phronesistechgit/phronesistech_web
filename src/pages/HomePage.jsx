@@ -25,7 +25,7 @@ const HomePage = () => {
 			<div className="flex flex-col items-center md:w-1/2 md:text-left text-center z-10">
 				{/* Heading with Framer Motion Animation */}
 				<motion.h1
-					className="mt-5 text-5xl font-bold text-white relative z-10"
+					className="hidden md:block mt-5 text-5xl font-bold text-white relative z-10"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}>

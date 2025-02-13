@@ -214,7 +214,7 @@ const ContactUs = () => {
 				<div>
 					<button
 						type="submit"
-						className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
+						className="w-full py-3 bg-gradient-to-r from-blue-400 to-[#007CC2] text-white font-semibold rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300">
 						Send Message
 					</button>
 				</div>
