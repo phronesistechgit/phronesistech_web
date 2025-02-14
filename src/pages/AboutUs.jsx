@@ -14,7 +14,7 @@ const AboutUs = () => {
 				<Player src={jsonfile} className="player" loop autoplay />
 				<div className="flex flex-col gap-6 md:w-1/2 text-lg text-gray-900">
 					<p className="text-justify leading-relaxed">
-						<span className="font-extrabold text-blue-700">
+						<span className="font-extrabold text-[#007CC2]">
 							PhronesisTech
 						</span>{" "}
 						is a dynamic company founded in 2022, offering
@@ -35,8 +35,8 @@ const AboutUs = () => {
 				</div>
 			</div>
 			<div className="max-w-6xl p-6 mx-auto flex flex-col md:flex-row justify-between items-center gap-10 mt-12">
-				<div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-blue-700 transform hover:scale-105 transition duration-500">
-					<h4 className="text-4xl font-bold text-center text-[#2563EB] mb-8">
+				<div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-[#007CC2] transform hover:scale-105 transition duration-500">
+					<h4 className="text-4xl font-bold text-center text-[#007CC2] mb-8">
 						Our Mission
 					</h4>
 					<p className="text-gray-800 leading-relaxed text-center">
@@ -45,8 +45,8 @@ const AboutUs = () => {
 						operational efficiency and drive digital transformation
 					</p>
 				</div>
-				<div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-blue-700 transform hover:scale-105 transition duration-500">
-					<h4 className="text-4xl font-bold text-center text-[#2563EB] mb-8">
+				<div className="text-center bg-white p-8 rounded-xl shadow-lg w-full md:w-1/2 border-t-4 border-[#007CC2] transform hover:scale-105 transition duration-500">
+					<h4 className="text-4xl font-bold text-center text-[#007CC2] mb-8">
 						Our Vision
 					</h4>
 

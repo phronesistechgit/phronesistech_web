@@ -73,16 +73,16 @@ const Footer = () => {
 					<p className="text-lg">
 						<a
 							target="_blank"
-							href="https://maps.app.goo.gl/NDYWtHfLDV2YzxBPA">
-							125, NCC Urban Green Province, Sarjapura, Bengaluru
-							562125
+							href="https://maps.app.goo.gl/M7UPEkoxBEAZRgnr9">
+							5, Palmer Lane Acton, MA, 01720, USA
 						</a>
 					</p>
 					<p className="text-lg">
 						<a
 							target="_blank"
-							href="https://maps.app.goo.gl/M7UPEkoxBEAZRgnr9">
-							5, Palmer Lane Acton, MA, 01720, USA
+							href="https://maps.app.goo.gl/NDYWtHfLDV2YzxBPA">
+							125, NCC Urban Green Province, Sarjapura, Bengaluru
+							562125
 						</a>
 					</p>
 				</div>
