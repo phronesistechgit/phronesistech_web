@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/phronesis_logo.png";
+import logo from "../assets/phronesistech_logo.jpg";
 
 const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
 						<img
 							src={logo}
 							alt="Company Logo"
-							className="h-12 w-auto"
+							className="h-14 w-auto"
 						/>
 						<span className="text-3xl font-bold text-[#007CC2]">
 							PhronesisTech

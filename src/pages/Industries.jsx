@@ -17,7 +17,7 @@ const Industries = () => {
 				{industries.map((industry, index) => (
 					<div
 						key={index}
-						className="relative p-4 rounded-2xl shadow-xl h-80 flex flex-col items-center justify-end bg-cover bg-center transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden w-80">
+						className="relative p-4 rounded-2xl shadow-xl h-40 md:h-60 flex flex-col items-center justify-end bg-cover bg-center transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden w-80">
 						<img
 							src={industry.image}
 							alt={industry.name}

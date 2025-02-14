@@ -17,7 +17,7 @@ const HomePage = () => {
 	return (
 		<section
 			id="home"
-			className="pb-16 px-8 pt-[10rem] text-center flex flex-col md:flex-row items-center justify-center min-h-screen relative overflow-hidden">
+			className="pb-1 md:pb-16 px-2 md:px-8 pt-[10rem] text-center flex flex-col md:flex-row items-center justify-center min-h-screen relative overflow-hidden">
 			{/* Animated Gradient Background */}
 			<div className="absolute inset-0 bg-gradient-to-b from-blue-300 to-[#007CC2] animate-gradientMove z-0"></div>
 
@@ -33,14 +33,14 @@ const HomePage = () => {
 				</motion.h1>
 
 				{/* Animated Points */}
-				<div className="mt-12 flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto z-10">
+				<div className="mt-2 md:mt-12 flex flex-wrap justify-center items-center gap-2 md:gap-6 max-w-4xl mx-auto z-10">
 					{points.map((point, index) => (
 						<motion.div
 							key={index}
-							className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform duration-300 text-white flex items-center justify-center text-center min-w-[200px] cursor-default font-bold"
+							className="bg-white bg-opacity-10 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-lg hover:scale-105 transform transition-transform duration-300 text-white flex items-center justify-center text-center min-w-[70px] md:min-w-[200px] cursor-default font-bold"
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: index * 0.2 }}>
+							transition={{ duration: 0.5, delay: index * 0.7 }}>
 							{point}
 						</motion.div>
 					))}
