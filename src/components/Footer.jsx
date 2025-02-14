@@ -58,11 +58,33 @@ const Footer = () => {
 				</div>
 
 				{/* Contact Info */}
-				<div className="space-y-6">
+				<div className="space-y-2">
 					<h3 className="font-semibold text-xl mb-6">Contact Info</h3>
-					<p className="text-lg">1234 Bengaluru, India</p>
-					<p className="text-lg">Email: sales@phronesistech.io</p>
-					<p className="text-lg">crm@phronesistech.io</p>
+					<p className="text-lg underline">
+						<a href="mailto:sales@phronesistech.io">
+							sales@phronesistech.io
+						</a>
+					</p>
+					<p className="text-lg underline">
+						<a href="mailto:crm@phronesistech.io">
+							crm@phronesistech.io
+						</a>
+					</p>
+					<p className="text-lg">
+						<a
+							target="_blank"
+							href="https://maps.app.goo.gl/NDYWtHfLDV2YzxBPA">
+							125, NCC Urban Green Province, Sarjapura, Bengaluru
+							562125
+						</a>
+					</p>
+					<p className="text-lg">
+						<a
+							target="_blank"
+							href="https://maps.app.goo.gl/M7UPEkoxBEAZRgnr9">
+							5, Palmer Lane Acton, MA, 01720, USA
+						</a>
+					</p>
 				</div>
 			</div>
 
