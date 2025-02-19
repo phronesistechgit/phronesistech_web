@@ -20,6 +20,7 @@ const offerings = [
 			{ name: "Data integration", icon: <FaCloud /> },
 			{ name: "DevOps", icon: <FaCogs /> },
 			{ name: "IT Maintenance & Support", icon: <FaShieldAlt /> },
+			{ name: "Analytics & Reporting", icon: <FaCogs /> },
 		],
 	},
 	{
@@ -35,7 +36,7 @@ const offerings = [
 			{ name: "Portals", icon: <FaDatabase /> },
 			{ name: "Artificial intelligence", icon: <FaCogs /> },
 			{ name: "Cyber security", icon: <FaShieldAlt /> },
-			{ name: "Internet of Things", icon: <FaCloud /> },
+			// { name: "Internet of Things", icon: <FaCloud /> },
 		],
 	},
 	{

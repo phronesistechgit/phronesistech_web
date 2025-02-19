@@ -17,7 +17,7 @@ const HomePage = () => {
 	return (
 		<section
 			id="home"
-			className="pb-1 md:pb-16 px-2 md:px-8 pt-[10rem] text-center flex flex-col md:flex-row items-center justify-center min-h-screen relative overflow-hidden">
+			className="pb-1 md:pb-16 px-2 md:px-8 pt-[10rem] text-center flex flex-col md:flex-row items-center justify-center min-h-auto md:min-h-screen relative overflow-hidden">
 			{/* Animated Gradient Background */}
 			<div className="absolute inset-0 bg-gradient-to-b from-blue-300 to-[#007CC2] animate-gradientMove z-0"></div>
 
@@ -48,7 +48,7 @@ const HomePage = () => {
 			</div>
 
 			{/* Lottie Animation Section */}
-			<div className="md:w-1/2 flex justify-center z-10">
+			<div className="-mt-20 md:mt-1 md:w-1/2 flex justify-center z-10">
 				<Player
 					autoplay
 					loop

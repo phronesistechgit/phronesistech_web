@@ -11,7 +11,9 @@ const AboutUs = () => {
 				About Us
 			</h2>
 			<div className="max-w-6xl p-6 mx-auto flex flex-col md:flex-row items-center gap-10">
-				<Player src={jsonfile} className="player" loop autoplay />
+				<div className="flex flex-col gap-6 md:w-1/2 text-lg text-gray-900">
+					<Player src={jsonfile} className="player" loop autoplay />
+				</div>
 				<div className="flex flex-col gap-6 md:w-1/2 text-lg text-gray-900">
 					<p className="text-justify leading-relaxed">
 						<span className="font-extrabold text-[#007CC2]">
